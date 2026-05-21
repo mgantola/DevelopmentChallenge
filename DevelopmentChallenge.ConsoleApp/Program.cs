@@ -14,26 +14,37 @@ namespace DevelopmentChallenge.ConsoleApp
                 new Cuadrado (1),
                 new TrianguloEquilatero (4),
                 new TrianguloEquilatero (9),
-                new Circulo (2.75m),                
+                new Circulo (2.75m),
                 new Circulo (3),
                 new TrianguloEquilatero (4.2m),
                 new Rectangulo (3, 4)
             };
 
-            Console.WriteLine("===== Reporte en Castellano =====");
-            Console.WriteLine(Reporte.Imprimir(formas, 0));
-            Console.WriteLine();
+            var traductor = new Traductor();
+            var idiomas = traductor.ObtenerIdiomas();
 
-            Console.WriteLine("===== Report in English =====");
-            Console.WriteLine(Reporte.Imprimir(formas, 1));
-            Console.WriteLine();
+            Console.WriteLine("Seleccione el idioma del reporte:");
+            for (var i = 0; i < idiomas.Length; i++)
+            {
+                Console.WriteLine($"{i} - {idiomas[i]}");
+            }
 
-            Console.WriteLine("===== Rapporto in italiano =====");
-            Console.WriteLine(Reporte.Imprimir(formas, 2));
-            Console.WriteLine();
+            Console.Write("Ingrese el indice de idioma: ");
+            var entradaUsuario = Console.ReadLine();
 
-            Console.WriteLine("===== Reporte para validar idioma default (Ingles) =====");
-            Console.WriteLine(Reporte.Imprimir(formas, 9));
+            var indiceValido = int.TryParse(entradaUsuario, out var indiceIdiomaSeleccionado)
+                              && indiceIdiomaSeleccionado >= 0
+                              && indiceIdiomaSeleccionado < idiomas.Length;
+
+            if (!indiceValido)
+            {
+                Console.WriteLine("no existe idioma, se utilizara el idioma por defecto");
+                indiceIdiomaSeleccionado = -1;
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("===== Reporte =====");
+            Console.WriteLine(Reporte.Imprimir(formas, indiceIdiomaSeleccionado));
             Console.WriteLine();
 
             Console.WriteLine("Presione una tecla para salir...");
