@@ -1,0 +1,51 @@
+{
+  "Castellano": {
+    "reporte_titulo": "Reporte de Formas",
+    "reporte_vacio": "Lista vacía de formas!",
+    "total": "TOTAL:",
+    "formas": "formas",
+    "perimetro": "Perimetro",
+    "area": "Area",
+    "cuadrado_singular": "Cuadrado",
+    "cuadrado_plural": "Cuadrados",
+    "circulo_singular": "Círculo",
+    "circulo_plural": "Círculos",
+    "trianguloequilatero_singular": "Triángulo",
+    "trianguloequilatero_plural": "Triángulos",
+    "rectangulo_singular": "Rectangulo",
+    "rectangulo_plural": "Rectangulos"
+
+  },
+  "Ingles": {
+    "reporte_titulo": "Shapes report",
+    "reporte_vacio": "Empty list of shapes!",
+    "total": "TOTAL:",
+    "formas": "shapes",
+    "perimetro": "Perimeter",
+    "area": "Area",
+    "cuadrado_singular": "Square",
+    "cuadrado_plural": "Squares",
+    "circulo_singular": "Circle",
+    "circulo_plural": "Circles",
+    "trianguloequilatero_singular": "Triangle",
+    "trianguloequilatero_plural": "Triangles",
+    "rectangulo_singular": "Rectangle",
+    "rectangulo_plural": "Rectangles"
+  },
+  "Italiano": {
+    "reporte_titulo": "Rapporto sulle forme",
+    "reporte_vacio": "Elenco vuoto di forme!",
+    "total": "TOTALE:",
+    "formas": "forme",
+    "perimetro": "Perimetro",
+    "area": "Zona",
+    "cuadrado_singular": "Piazza",
+    "cuadrado_plural": "Piazze",
+    "circulo_singular": "Cerchio",
+    "circulo_plural": "Cerchi",
+    "trianguloequilatero_singular": "Triangolo",
+    "trianguloequilatero_plural": "Triangoli",
+    "rectangulo_singular": "Rettangolo",
+    "rectangulo_plural": "Rettangoli"
+  }
+}
