@@ -60,5 +60,11 @@ msbuild DevelopmentChallenge.sln /t:Build /p:Configuration=Debug
 ```powershell
 msbuild DevelopmentChallenge.sln /t:Build /p:Configuration=Debug
 ```
+Luego ejecutar a través del runner de NUnit
 
-Luego ejecutar los tests desde Visual Studio (Test Explorer) o con el runner de NUnit disponible en tu entorno.
+```powershell
+msbuild DevelopmentChallenge.sln /t:Restore,Build /p:Configuration=Debug
+packages\NUnit.ConsoleRunner.3.11.1\tools\nunit3-console.exe DevelopmentChallenge.Data.Tests\bin\Debug\DevelopmentChallenge.Data.Tests.dll
+```
+
+O ejecutar los tests desde Visual Studio (Test Explorer).
