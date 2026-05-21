@@ -8,6 +8,7 @@ namespace DevelopmentChallenge.Data.Tests
     [TestFixture]
     public class DataTests
     {
+        private readonly Traductor _traductor = new Traductor();
         [TestCase]
         public void TestResumenListaVacia()
         {
@@ -87,6 +88,47 @@ namespace DevelopmentChallenge.Data.Tests
             Assert.AreEqual(
                 "<h1>Reporte de Formas</h1>2 Cuadrados | Area 29 | Perimetro 28 <br/>2 Círculos | Area 13,01 | Perimetro 18,06 <br/>3 Triángulos | Area 49,64 | Perimetro 51,6 <br/>TOTAL:<br/>7 formas Perimetro 97,66 Area 91,65",
                 resumen);
+        }
+
+        [Test]
+        public void ObtenerIdiomas_DeberiaRetornarLosTresIdiomasConfigurados()
+        {
+            var idiomas = _traductor.ObtenerIdiomas();
+
+            CollectionAssert.AreEquivalent(new[] { "Castellano", "Ingles", "Italiano" }, idiomas);
+            Assert.AreEqual(3, idiomas.Length);
+        }
+
+        [Test]
+        public void Traducir_Castellano_DeberiaRetornarTextoEnEspanol()
+        {
+            var traduccion = _traductor.Traducir("reporte_titulo", "Castellano");
+
+            Assert.AreEqual("Reporte de Formas", traduccion);
+        }
+
+        [Test]
+        public void Traducir_Ingles_DeberiaRetornarTextoEnIngles()
+        {
+            var traduccion = _traductor.Traducir("rectangulo_plural", "Ingles");
+
+            Assert.AreEqual("Rectangles", traduccion);
+        }
+
+        [Test]
+        public void Traducir_Italiano_DeberiaRetornarTextoEnItaliano()
+        {
+            var traduccion = _traductor.Traducir("cuadrado_singular", "Italiano");
+
+            Assert.AreEqual("Piazza", traduccion);
+        }
+
+        [Test]
+        public void Traducir_ClaveInexistente_DeberiaRetornarLaClaveOriginal()
+        {
+            var traduccion = _traductor.Traducir("clave_inexistente", "Castellano");
+
+            Assert.AreEqual("clave_inexistente", traduccion);
         }
     }
 }
